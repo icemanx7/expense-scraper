@@ -12,10 +12,16 @@ lazy val root = (project in file("."))
     libraryDependencies += cats,
     libraryDependencies += catsEffect,
     libraryDependencies += sttp,
+    libraryDependencies += catsEffectPureConfig,
+    libraryDependencies += newType,
+    libraryDependencies ++= circe,
     libraryDependencies += scalaTest,
     libraryDependencies += scalaTestTest,
     libraryDependencies += scalaMock,
     libraryDependencies += scalaTestMock
   )
 
+scalacOptions ++= Seq( // use ++= to add to existing options
+  "-Ymacro-annotations"
+)
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
