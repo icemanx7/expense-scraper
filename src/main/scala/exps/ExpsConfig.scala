@@ -34,7 +34,6 @@ object ClientAuth {
   object Host {
     implicit val configReader: ConfigReader[Host] = deriving
   }
-
 }
 
 final case class Port(port: Int) extends AnyVal

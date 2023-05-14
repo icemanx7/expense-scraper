@@ -14,6 +14,7 @@ lazy val root = (project in file("."))
     libraryDependencies += sttp,
     libraryDependencies += catsEffectPureConfig,
     libraryDependencies += newType,
+    libraryDependencies += sttpCats,
     libraryDependencies ++= circe,
     libraryDependencies += scalaTest,
     libraryDependencies += scalaTestTest,

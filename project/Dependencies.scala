@@ -1,7 +1,7 @@
 import sbt._
 
 object Dependencies {
-  val circeVersion = "0.14.1"
+  val circeVersion = "0.14.5"
 
   lazy val pureConfig = "com.github.pureconfig" %% "pureconfig" % "0.17.4"
   lazy val cats = "org.typelevel" %% "cats-core" % "2.9.0"
@@ -15,12 +15,16 @@ object Dependencies {
   lazy val circe = Seq(
     "io.circe" %% "circe-core",
     "io.circe" %% "circe-generic",
-    "io.circe" %% "circe-parser"
+    "io.circe" %% "circe-parser",
+    "io.circe" %% "circe-literal"
   ).map(_ % circeVersion)
 
   lazy val catsEffectPureConfig =
     "com.github.pureconfig" %% "pureconfig-cats-effect" % "0.17.4"
 
   lazy val newType = "io.estatico" %% "newtype" % "0.4.4"
+
+  lazy val sttpCats =
+    "com.softwaremill.sttp.client3" %% "armeria-backend-cats" % "3.8.15" // for cats-effect 3.x
 
 }
