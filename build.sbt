@@ -1,14 +1,21 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.10"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+ThisBuild / scalaVersion := "2.13.10"
+ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / organization := "rt.solution"
+ThisBuild / organizationName := "solution"
 
 lazy val root = (project in file("."))
   .settings(
     name := "expense-scraper",
-    libraryDependencies += munit % Test
+    libraryDependencies += pureConfig,
+    libraryDependencies += cats,
+    libraryDependencies += catsEffect,
+    libraryDependencies += sttp,
+    libraryDependencies += scalaTest,
+    libraryDependencies += scalaTestTest,
+    libraryDependencies += scalaMock,
+    libraryDependencies += scalaTestMock
   )
 
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
